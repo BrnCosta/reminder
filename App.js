@@ -61,9 +61,7 @@ export default function App() {
         });
 
         async function handleListener(event){
-            console.log('a')
             if(event.origin === 'selected'){
-                console.log('b')
                 event.actionId === 'done' ?
                     await TaskService.setDoneByNotification(event.notificationId) :
                     await TaskService.rescheduleNotification(event.notificationId);
